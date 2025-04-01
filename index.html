@@ -91,6 +91,7 @@
             max-width: 600px;
             margin: 0 auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
         }
 
         .tool-item:hover {
@@ -113,8 +114,16 @@
             color: #b9bbbe;
         }
 
-        .tool-link {
-            text-decoration: none;
+        .tool-card .tool-details {
+            display: none;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #b9bbbe;
+            text-align: left;
+        }
+
+        .tool-item.open .tool-details {
+            display: block;
         }
 
         /* フッター */
@@ -128,6 +137,12 @@
         }
 
     </style>
+    <script>
+        // ツールの詳細を表示/非表示にするスクリプト
+        function toggleDetails(element) {
+            element.classList.toggle('open');
+        }
+    </script>
 </head>
 <body>
     <!-- 雪のエフェクト -->
@@ -145,30 +160,35 @@
     </header>
     <main>
         <section class="tool-list">
-            <div class="tool-item">
-                <a href="https://smokeycode000.github.io/leaveGroups/" class="tool-link">
-                    <div class="tool-card">
-                        <h3>グループ退出ツール</h3>
-                        <p>このツールは、DiscordのグループDMから指定したグループ名またはすべてのグループを自動で退出するためのツールです。</p>
+            <!-- ツール1 -->
+            <div class="tool-item" onclick="toggleDetails(this)">
+                <div class="tool-card">
+                    <h3>グループ退出ツール</h3>
+                    <p>このツールは、DiscordのグループDMから指定したグループ名またはすべてのグループを自動で退出するためのツールです。</p>
+                    <div class="tool-details">
+                        <p>tokenを使用して、指定したグループから退出します。</p>
                     </div>
-                </a>
+                </div>
             </div>
-            <div class="tool-item">
-                <a href="https://discord.com/oauth2/authorize?client_id=1302503314365091841" class="tool-link">
-                    <div class="tool-card">
-                        <h3>DMスパムBot</h3>
-                        <p>このツールは、Discordサーバー「discord.gg/yMaWYAWy55」に参加しているユーザーにDMを送信するBotです。</p>
+            <!-- ツール2 -->
+            <div class="tool-item" onclick="toggleDetails(this)">
+                <div class="tool-card">
+                    <h3>DMスパムBot</h3>
+                    <p>このツールは、Discordサーバー「discord.gg/yMaWYAWy55」に参加しているユーザーにDMを送信するBotです。</p>
+                    <div class="tool-details">
+                        <p>あなたのサーバーにBotを参加させてください。<br>`n!dm <userid> <message>`でその相手にSpamします。</p>
                     </div>
-                </a>
+                </div>
             </div>
-            <!-- 追加された3つ目のツール -->
-            <div class="tool-item">
-                <a href="https://d.kuku.lu/a55vdva4p" class="tool-link">
-                    <div class="tool-card">
-                        <h3>Token Loginツール</h3>
-                        <p>最新バージョンに対応した、Discordトークンを使用してログインするツールです。</p>
+            <!-- ツール3 -->
+            <div class="tool-item" onclick="toggleDetails(this)">
+                <div class="tool-card">
+                    <h3>Token Loginツール</h3>
+                    <p>最新バージョンに対応した、Discordトークンを使用してログインするツールです。</p>
+                    <div class="tool-details">
+                        <p>Tokenを使ってDiscordにログインします。</p>
                     </div>
-                </a>
+                </div>
             </div>
         </section>
     </main>
