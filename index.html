@@ -27,7 +27,6 @@
         /* 雪のエフェクト */
         .snowflake {
             position: absolute;
-            top: -10px;
             color: #fff;
             font-size: 24px;
             z-index: 999;
@@ -142,19 +141,25 @@
         function toggleDetails(element) {
             element.classList.toggle('open');
         }
+
+        // 雪の位置をランダムに設定
+        function generateSnowflakes() {
+            for (let i = 0; i < 20; i++) {
+                let snowflake = document.createElement('div');
+                snowflake.classList.add('snowflake');
+                snowflake.textContent = '❄';
+                snowflake.style.left = `${Math.random() * 100}%`; // ランダムな横位置
+                snowflake.style.animationDuration = `${Math.random() * 10 + 10}s`; // ランダムなアニメーション時間
+                snowflake.style.animationDelay = `${Math.random() * 5}s`; // ランダムなアニメーション遅延
+                document.body.appendChild(snowflake);
+            }
+        }
+
+        // ページ読み込み時に雪を降らせる
+        window.onload = generateSnowflakes;
     </script>
 </head>
 <body>
-    <!-- 雪のエフェクト -->
-    <div class="snowflake" style="left: 10%; animation-duration: 12s; animation-delay: 0s;">❄</div>
-    <div class="snowflake" style="left: 20%; animation-duration: 14s; animation-delay: 2s;">❄</div>
-    <div class="snowflake" style="left: 30%; animation-duration: 16s; animation-delay: 4s;">❄</div>
-    <div class="snowflake" style="left: 40%; animation-duration: 18s; animation-delay: 6s;">❄</div>
-    <div class="snowflake" style="left: 50%; animation-duration: 20s; animation-delay: 8s;">❄</div>
-    <div class="snowflake" style="left: 60%; animation-duration: 22s; animation-delay: 10s;">❄</div>
-    <div class="snowflake" style="left: 70%; animation-duration: 24s; animation-delay: 12s;">❄</div>
-    <div class="snowflake" style="left: 80%; animation-duration: 26s; animation-delay: 14s;">❄</div>
-
     <header>
         <h1>Discord Tools</h1>
     </header>
@@ -166,7 +171,10 @@
                     <h3>グループ退出ツール</h3>
                     <p>このツールは、DiscordのグループDMから指定したグループ名またはすべてのグループを自動で退出するためのツールです。</p>
                     <div class="tool-details">
-                        <p>tokenを使用して、指定したグループから退出します。</p>
+                        <p><strong>詳細:</strong><br>
+                            <a href="https://smokeycode000.github.io/leaveGroups/" target="_blank">ツールへのリンク</a><br>
+                            tokenを使用して、指定したグループから退出します。
+                        </p>
                     </div>
                 </div>
             </div>
@@ -176,7 +184,11 @@
                     <h3>DMスパムBot</h3>
                     <p>このツールは、Discordサーバー「discord.gg/yMaWYAWy55」に参加しているユーザーにDMを送信するBotです。</p>
                     <div class="tool-details">
-                        <p>あなたのサーバーにBotを参加させてください。<br>`n!dm <userid> <message>`でその相手にSpamします。</p>
+                        <p><strong>詳細:</strong><br>
+                            <a href="https://discord.com/oauth2/authorize?client_id=1302503314365091841" target="_blank">Botを追加</a><br>
+                            あなたのサーバーにBotを参加させてください。<br>
+                            `n!dm <userid> <message>`でその相手にSpamします。
+                        </p>
                     </div>
                 </div>
             </div>
@@ -186,7 +198,10 @@
                     <h3>Token Loginツール</h3>
                     <p>最新バージョンに対応した、Discordトークンを使用してログインするツールです。</p>
                     <div class="tool-details">
-                        <p>Tokenを使ってDiscordにログインします。</p>
+                        <p><strong>詳細:</strong><br>
+                            <a href="https://d.kuku.lu/a55vdva4p" target="_blank">ツールへのリンク</a><br>
+                            Tokenを使ってDiscordにログインします。
+                        </p>
                     </div>
                 </div>
             </div>
